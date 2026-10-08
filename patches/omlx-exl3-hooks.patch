@@ -1,0 +1,32 @@
+diff --git a/omlx/cluster/worker_shim.py b/omlx/cluster/worker_shim.py
+index ba88d83b..e4062cde 100644
+--- a/omlx/cluster/worker_shim.py
++++ b/omlx/cluster/worker_shim.py
+@@ -77,6 +77,11 @@ def ensure_cluster_python_shim(
+ 
+     executable = executable or sys.executable
+     environ = os.environ if environ is None else environ
++    if environ.get("OMLX_SKIP_CLUSTER_SHIM") == "1":
++        # A second install (e.g. a fork serving from its own --base-path) must not repoint the
++        # machine-wide shim that peers resolve over SSH to its own interpreter.
++        logger.debug("Not publishing a cluster shim: OMLX_SKIP_CLUSTER_SHIM=1")
++        return None
+     if not Path(executable).is_absolute():
+         # A bare name resolves against the peer's PATH at SSH time, which is a
+         # different PATH than this process has. Refuse rather than publish a
+diff --git a/omlx/utils/model_loading.py b/omlx/utils/model_loading.py
+index 608d4fbb..dee058d7 100644
+--- a/omlx/utils/model_loading.py
++++ b/omlx/utils/model_loading.py
+@@ -1451,6 +1451,11 @@ def maybe_load_custom_quantization(
+     if not quant_method:
+         return None
+ 
++    if quant_method.lower() == "exl3":
++        from ..exl3 import load as exl3_load
++
++        return exl3_load(model_name, is_vlm=is_vlm)
++
+     if quant_method.lower() == "compressed-tensors":
+         from ..patches import qwen38_modelopt_mixed
+ 

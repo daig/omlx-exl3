@@ -1,0 +1,13 @@
+{
+  "version": 1,
+  "models": {
+    "Qwen3.8-27B-exl3-SC6": {
+      "mtp_enabled": true,
+      "mtp_fixed_depth": 3
+    },
+    "Qwen3.8-27B-exl3-SC5": {
+      "mtp_enabled": true,
+      "mtp_fixed_depth": 3
+    }
+  }
+}

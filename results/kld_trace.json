@@ -1,0 +1,78 @@
+{
+  "dataset": "in-domain trace",
+  "reference": "mlx-community/Qwen3.8-27B-bf16",
+  "ref_ppl": 1.3335,
+  "scored_positions": 45954,
+  "models": {
+    "EXL3 SC_6.00bpw_H6": {
+      "weights_gib": 17.94,
+      "bpw": 6.01,
+      "kld_mean": 0.000829,
+      "kld_ci95": [
+        0.000674,
+        0.000983
+      ],
+      "kld_median": 2.1089159417897463e-05,
+      "kld_p90": 0.002322,
+      "kld_p99": 0.00781,
+      "top1_agreement": 0.9913,
+      "ppl": 1.3339
+    },
+    "EXL3 SC_5.00bpw_H6": {
+      "weights_gib": 15.11,
+      "bpw": 5.07,
+      "kld_mean": 0.001766,
+      "kld_ci95": [
+        0.001369,
+        0.002185
+      ],
+      "kld_median": 6.404022860806435e-05,
+      "kld_p90": 0.005247,
+      "kld_p99": 0.01793,
+      "top1_agreement": 0.9867,
+      "ppl": 1.3351
+    },
+    "MLX 8-bit (affine, group 64)": {
+      "weights_gib": 25.36,
+      "bpw": 8.5,
+      "kld_mean": 0.000681,
+      "kld_ci95": [
+        0.00055,
+        0.000799
+      ],
+      "kld_median": 1.3655886505148374e-05,
+      "kld_p90": 0.001981,
+      "kld_p99": 0.00671,
+      "top1_agreement": 0.9926,
+      "ppl": 1.3337
+    },
+    "oMLX oQ6 (6/8-bit mixed)": {
+      "weights_gib": 19.58,
+      "bpw": 6.56,
+      "kld_mean": 0.002301,
+      "kld_ci95": [
+        0.001886,
+        0.002689
+      ],
+      "kld_median": 9.516472346149385e-05,
+      "kld_p90": 0.00726,
+      "kld_p99": 0.02385,
+      "top1_agreement": 0.9845,
+      "ppl": 1.3366
+    },
+    "BF16 noise floor": {
+      "weights_gib": 47.73,
+      "bpw": 16.0,
+      "kld_mean": 0.000476,
+      "kld_ci95": [
+        0.000399,
+        0.000548
+      ],
+      "kld_median": 7.112063030945137e-06,
+      "kld_p90": 0.001722,
+      "kld_p99": 0.00502,
+      "top1_agreement": 0.9943,
+      "ppl": 1.3335
+    }
+  }
+}

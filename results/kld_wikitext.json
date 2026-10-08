@@ -1,0 +1,78 @@
+{
+  "dataset": "wikitext-2 (chat-framed)",
+  "reference": "mlx-community/Qwen3.8-27B-bf16",
+  "ref_ppl": 8.4279,
+  "scored_positions": 40960,
+  "models": {
+    "EXL3 SC_6.00bpw_H6": {
+      "weights_gib": 17.94,
+      "bpw": 6.01,
+      "kld_mean": 0.007799,
+      "kld_ci95": [
+        0.005921,
+        0.009838
+      ],
+      "kld_median": 0.0014043354894965887,
+      "kld_p90": 0.005994,
+      "kld_p99": 0.07442,
+      "top1_agreement": 0.9747,
+      "ppl": 8.5208
+    },
+    "EXL3 SC_5.00bpw_H6": {
+      "weights_gib": 15.11,
+      "bpw": 5.07,
+      "kld_mean": 0.016847,
+      "kld_ci95": [
+        0.012501,
+        0.021779
+      ],
+      "kld_median": 0.0032371364068239927,
+      "kld_p90": 0.018774,
+      "kld_p99": 0.18166,
+      "top1_agreement": 0.9614,
+      "ppl": 8.1479
+    },
+    "MLX 8-bit (affine, group 64)": {
+      "weights_gib": 25.36,
+      "bpw": 8.5,
+      "kld_mean": 0.007511,
+      "kld_ci95": [
+        0.005354,
+        0.009632
+      ],
+      "kld_median": 0.0011266428045928478,
+      "kld_p90": 0.005514,
+      "kld_p99": 0.05286,
+      "top1_agreement": 0.9768,
+      "ppl": 8.2606
+    },
+    "oMLX oQ6 (6/8-bit mixed)": {
+      "weights_gib": 19.58,
+      "bpw": 6.56,
+      "kld_mean": 0.015798,
+      "kld_ci95": [
+        0.010419,
+        0.022593
+      ],
+      "kld_median": 0.0025240350514650345,
+      "kld_p90": 0.012178,
+      "kld_p99": 0.15008,
+      "top1_agreement": 0.963,
+      "ppl": 8.3103
+    },
+    "BF16 noise floor": {
+      "weights_gib": 47.73,
+      "bpw": 16.0,
+      "kld_mean": 0.005257,
+      "kld_ci95": [
+        0.003356,
+        0.007253
+      ],
+      "kld_median": 0.0006508431397378445,
+      "kld_p90": 0.002779,
+      "kld_p99": 0.02889,
+      "top1_agreement": 0.9831,
+      "ppl": 8.4271
+    }
+  }
+}
